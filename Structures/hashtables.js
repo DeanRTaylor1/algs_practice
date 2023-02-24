@@ -38,7 +38,7 @@ class HashTable {
         }
         return undefined;
     }
-    get getKeys() {
+    get keys() {
         let keys = [];
         for (let item of this.keyMap) {
             if (item) {
@@ -49,7 +49,7 @@ class HashTable {
         }
         return keys.length ? keys : undefined;
     }
-    get getVals() {
+    get vals() {
         let keys = [];
         for (let item of this.keyMap) {
             if (item) {
@@ -88,5 +88,5 @@ console.log(hashTable.keyMap);
 console.log(hashTable.getVal("pink500"));
 console.log(hashTable.getVal("sky300"));
 console.log(hashTable.getVal("rose500"));
-console.log(hashTable.getKeys);
-console.log(hashTable.getVals);
+console.log(hashTable.keys);
+console.log(hashTable.vals);

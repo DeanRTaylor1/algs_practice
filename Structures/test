@@ -1,0 +1,28 @@
+var maxProfit = function (prices) {
+  let pointer1 = 0;
+  let pointer2 = 1;
+  let min = 0;
+  let max = 0;
+  while (pointer1 <= prices.length - 1) {
+    if (pointer2 < prices.length) {
+      while (pointer1 < pointer2) {
+        if (prices[pointer1] < min) {
+          min = prices[pointer1];
+        }
+        pointer1++;
+      }
+    }
+    if (prices[pointer2] - prices[pointer1] > max) {
+      max = prices[pointer2];
+      while (pointer1 < pointer2) {
+        if (prices[pointer1] < min) {
+          min = prices[pointer1];
+        }
+        pointer1++;
+      }
+      pointer2++;
+    }
+  }
+
+  return max - min;
+};
